@@ -6,6 +6,9 @@ set -e
 
 DOCKERHUBREPO=fitr2lab
 
+# the shell scripts that get copied in the build contexts come from r2lab-embedded
+R2LAB_EMBEDDED=${R2LAB_EMBEDDED:-$HOME/git/r2lab-embedded}
+
 # globals
 DEFAULT_TAG=latest
 OPT_BUILD_ONLY=""
@@ -54,7 +57,7 @@ function main() {
 function build() {
     local subdir="$1"; shift
     # POPULATE the docker build dir with all shell scripts
-    rsync -ai ../shell/*.sh $subdir
+    rsync -ai $R2LAB_EMBEDDED/shell/*.sh $subdir
     command="docker build"
     [ -z "$OPT_FORCE" ] || command="$command --no-cache"
     command="$command $subdir -t $DOCKERHUBREPO/$subdir:$TAG"

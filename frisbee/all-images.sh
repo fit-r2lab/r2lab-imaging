@@ -3,17 +3,17 @@
 case $(hostname) in
     faraday*)
         gateway=localhost
-        gitroot=/root/r2lab-embedded
+        gitroot=${R2LAB_EMBEDDED:-/root/r2lab-embedded}
     ;;
     *)
         gateway=inria_admin@faraday.inria.fr
-        gitroot=$HOME/git/r2lab-embedded
+        gitroot=${R2LAB_EMBEDDED:-$HOME/git/r2lab-embedded}
     ;;
 esac
 
 # check that this directory exists
 [ -d $gitroot ] || {
-    echo "Could not locate your r2lab-embedded git repo - search for gitroot in the code"
+    echo "Could not locate your r2lab-embedded git repo - set R2LAB_EMBEDDED to its location"
     exit 1
 }
 
