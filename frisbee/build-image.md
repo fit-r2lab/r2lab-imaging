@@ -48,7 +48,7 @@ In particular for the stuff in `r2lab-embedded/shell/`; for example
 `oai-gw.sh` requires `nodes.sh` and `oai-common.sh`
 
 ```
-~/git/r2lab-embedded/shell $ ~/git/r2lab-images/frisbee/build-image.py -f $(plr faraday) 1 ubuntu-16.04-v4-node-env oai1609-gw-001 "oai-gw.sh cn-git-fetch" -i oai-common.sh -i nodes.sh
+~/git/r2lab-embedded/shell $ ~/git/r2lab-imaging/frisbee/build-image.py -f $(plr faraday) 1 ubuntu-16.04-v4-node-env oai1609-gw-001 "oai-gw.sh cn-git-fetch" -i oai-common.sh -i nodes.sh
 ```
 
 

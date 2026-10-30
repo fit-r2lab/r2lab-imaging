@@ -1,4 +1,4 @@
-# r2lab-images
+# r2lab-imaging
 
 Tooling and notes for the images used on the R2lab testbed. There are two
 kinds of them, and not much of this is actively used any more.
