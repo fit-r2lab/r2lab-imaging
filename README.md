@@ -34,6 +34,9 @@ the Dockerfiles for a few images published on Docker Hub as `fitr2lab/*`.
   It copies `r2lab-embedded/shell/*.sh` in the build context first, see
   `R2LAB_EMBEDDED` above.
 - `baleine/`, `ubuntu16/` and `openairinterface5g/`.
+- `docker-fedora32-r2lab/` and `docker-ubuntu18-r2lab/`: minimal base images with
+  the networking and kernel-module tools, from the former `non-standard-nodes`
+  in `r2lab-misc`.
 - `openair-cn/` **does not work**: phpmyadmin cannot be built without systemd.
   It is kept for the record.
 
