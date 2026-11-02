@@ -15,4 +15,3 @@ RUN ./oai-gw.sh base1
 RUN ./oai-gw.sh base2
 RUN ./oai-gw.sh deps
 RUN ./oai-gw.sh build
-

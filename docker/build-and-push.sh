@@ -39,7 +39,7 @@ function main() {
         esac
     done
     shift $((OPTIND-1))
-    
+
     # one mandatory argument
     [[ -z "$@" ]] && usage
     local subdir="$1"; shift
@@ -50,7 +50,7 @@ function main() {
 
     build $subdir
     [ -z "$OPT_BUILD_ONLY" ] && push $subdir
-    
+
 }
 
 
@@ -70,6 +70,6 @@ function build() {
 function push() {
     local subdir="$1"; shift
     docker push $DOCKERHUBREPO/$subdir:$TAG
-}    
+}
 
 main "$@"

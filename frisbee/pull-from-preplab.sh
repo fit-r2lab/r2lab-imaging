@@ -11,17 +11,17 @@ command=$(basename $0)
 
 case $command in
     pull*)
-	from=$preplab:$repo/
-	to=$repo/
-	;;
+        from=$preplab:$repo/
+        to=$repo/
+    ;;
     push*)
-	from=$repo/
-	to=$preplab:$repo/
-	;;
+        from=$repo/
+        to=$preplab:$repo/
+    ;;
     *)
 esac
-    
-# Thierry - Apr 26 2016 : 
+
+# Thierry - Apr 26 2016 :
 # it is much safer to *NOT* mention --delete
-# as images can be saved directly on faraday 
+# as images can be saved directly on faraday
 rsync "$@" -av --exclude '*preplab*' --exclude archive\* --exclude \*.log --exclude root-node\* --exclude saving\* $from $to
