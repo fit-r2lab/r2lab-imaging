@@ -11,15 +11,15 @@ command=$(basename $0)
 
 case $command in
     pull*)
-        from=$preplab:$repo/
-        to=$repo/
+        from=$preplab:$repo/prep/
+        to=$repo/prep/
     ;;
-    push*)
-		echo "Warning: backup-faraday-images timer/service already does this"
-		echo -n "Want to do it anyway ? (control-C if not) "; read _
-        from=$repo/
-        to=$preplab:$repo/
-    ;;
+    # push*)
+	# 	echo "Warning: backup-faraday-images timer/service already does this"
+	# 	echo -n "Want to do it anyway ? (control-C if not) "; read _
+    #     from=$repo/
+    #     to=$preplab:$repo/
+    # ;;
     *)
 esac
 
