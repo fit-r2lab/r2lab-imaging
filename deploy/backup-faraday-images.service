@@ -1,0 +1,9 @@
+[Unit]
+Description=Backup faraday images to bigjack and bigjohn, and sync *.ndz to distrait
+
+[Service]
+Type=oneshot
+User=root
+ExecStart=-/bin/bash -c 'echo === bigjack; rsync -ai --stats --exclude archive --exclude archive-oai --delete-excluded --delete /var/lib/rhubarbe-images root@bigjack.pl.sophia.inria.fr:/containers/backup-faraday-images'
+ExecStart=-/bin/bash -c 'echo === bigjohn; rsync -ai --stats --exclude archive --exclude archive-oai --delete-excluded --delete /var/lib/rhubarbe-images root@bigjohn.pl.sophia.inria.fr:/containers/backup-faraday-images'
+ExecStart=-/bin/bash -c 'echo === distrait; rsync -ai --stats --delete --include "*.ndz" --exclude "*" /var/lib/rhubarbe-images/ root@distrait.pl.sophia.inria.fr:/var/lib/rhubarbe-images/'
