@@ -2,7 +2,8 @@
 Description=Backup faraday images - daily
 
 [Timer]
-OnCalendar=*-*-* 04:00:00
+OnCalendar=hourly
+#OnCalendar=*-*-* 04:00:00
 AccuracySec=1min
 
 [Install]
