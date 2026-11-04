@@ -84,6 +84,14 @@ the Dockerfiles for a few images published on Docker Hub as `fitr2lab/*`.
 - `openair-cn/` **does not work**: phpmyadmin cannot be built without systemd.
   It is kept for the record.
 
+### Docker-enabled host images (current)
+
+Not stale, unlike the rest of this section: the host images used by
+`rhubarbe docker load` (frisbee images with docker or podman, and the host
+sshd on port 2222) are described in `docker/host-images.md`, and
+`docker/dropbear/build-dropbear.sh` builds the static sshd that rhubarbe
+injects in containers whose image has none.
+
 ## History
 
 This was extracted from `r2lab-embedded` (`imaging/` and `docker-images/`) and
