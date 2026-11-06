@@ -3,13 +3,18 @@
 case $(hostname) in
     faraday*)
         gateway=localhost
-        gitroot=${R2LAB_EMBEDDED:-/root/r2lab-embedded}
     ;;
     *)
         gateway=inria_admin@faraday.inria.fr
-        gitroot=${R2LAB_EMBEDDED:-$HOME/git/r2lab-embedded}
     ;;
 esac
+
+# the default location of r2lab-embedded depends on who we are
+if [ "$(id -u)" = 0 ]; then
+    gitroot=${R2LAB_EMBEDDED:-/root/r2lab-embedded}
+else
+    gitroot=${R2LAB_EMBEDDED:-$HOME/git/r2lab-embedded}
+fi
 
 # check that this directory exists
 [ -d $gitroot ] || {

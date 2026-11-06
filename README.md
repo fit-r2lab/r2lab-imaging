@@ -63,8 +63,8 @@ subfolders, they do not get trashed by `--delete`. Those are the ones that
 
 The scripts that get pushed to the nodes live in `r2lab-embedded/shell/`,
 not here. Set `R2LAB_EMBEDDED` to where that repo is cloned if it is not in
-the default location (`/root/r2lab-embedded` on faraday, otherwise
-`~/git/r2lab-embedded`).
+the default location (`/root/r2lab-embedded` when running as root,
+otherwise `~/git/r2lab-embedded`).
 
 ## docker images (`docker/`)
 

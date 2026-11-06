@@ -7,7 +7,13 @@ set -e
 DOCKERHUBREPO=fitr2lab
 
 # the shell scripts that get copied in the build contexts come from r2lab-embedded
-R2LAB_EMBEDDED=${R2LAB_EMBEDDED:-$HOME/git/r2lab-embedded}
+# default location depends on who we are: root (e.g. on faraday) has it in
+# /root, other users have it with their other git repos
+if [ "$(id -u)" = 0 ]; then
+    R2LAB_EMBEDDED=${R2LAB_EMBEDDED:-/root/r2lab-embedded}
+else
+    R2LAB_EMBEDDED=${R2LAB_EMBEDDED:-$HOME/git/r2lab-embedded}
+fi
 
 # globals
 DEFAULT_TAG=latest
