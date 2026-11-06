@@ -10,8 +10,8 @@ The rhubarbe side (config, registries, image naming) is documented in
 - docker is installed and starts at boot; the `docker` command exists
   (on fedora: package `podman-docker`, which wraps podman; rhubarbe always
   calls `docker`)
-- the **host sshd listens on port 2222**, with root login by the same key
-  as for regular nodes. Port 22 is left free for the container, which
+- the **host sshd listens on port 2222**, with root login as for regular
+  nodes (no access control: that is done upstream by the gateway). Port 22 is left free for the container, which
   shares the host network. rhubarbe drives the node through 2222
   (`[docker] host_ssh_port`)
 - `ss` is available (used to see whether something listens on port 22)
